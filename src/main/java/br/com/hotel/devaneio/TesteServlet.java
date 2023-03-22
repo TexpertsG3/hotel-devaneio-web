@@ -2,6 +2,7 @@ package br.com.hotel.devaneio;
 
 import java.io.IOException;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,5 +14,7 @@ public class TesteServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Chegou na Servlet");
+		RequestDispatcher requestDispatcher = req.getRequestDispatcher("teste.jsp");
+		requestDispatcher.forward(req, resp);
 	}
 }
